@@ -1,6 +1,6 @@
 package it.polito.tdp.borders.model;
 
-public class Adiacenza {
+public class Adiacenza {//modella solo il fatto che i due stati siano confinanti
 
 	private int state1no ;
 	private int state2no ;

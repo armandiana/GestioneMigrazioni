@@ -14,12 +14,11 @@ import java.util.Map;
 
 public class BordersDAO {
 	
-	public List<Country> loadAllCountries(Map<Integer,Country> countriesMap) {
+	public List<Country> loadAllCountries( Map<Integer,Country> countriesMap ) {
 		
-		String sql = 
-				"SELECT ccode,StateAbb,StateNme " +
-				"FROM country " +
-				"ORDER BY StateAbb " ;
+		String sql = "SELECT ccode,StateAbb,StateNme " +
+				     "FROM country " +
+				     "ORDER BY StateAbb " ;
 
 		try {
 			Connection conn = DBConnect.getConnection() ;
@@ -57,7 +56,7 @@ public class BordersDAO {
 		return null ;
 	}
 	
-	public List<Country> getCountriesFromYear(int anno,Map<Integer,Country> countriesMap) {
+	public List<Country> getCountriesFromYear(int anno,Map<Integer,Country> countriesMap) { //con questo mi ottengo i vertici.
 		String sql = "select * from country " + 
 				"where CCode in ( " + 
 				"select state1no " + 

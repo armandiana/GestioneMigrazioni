@@ -13,7 +13,7 @@ package it.polito.tdp.borders.model;
  * @author Fulvio
  *
  */
-public class Country {
+public class Country implements Comparable<Country>{
 
 	private int cCode ; // Country Code for the state
 	private String stateAbb ; // State Abbreviation (3 capital letters)
@@ -108,7 +108,12 @@ public class Country {
 	 */
 	@Override
 	public String toString() {
-		return String.format("[%s=%s]", stateAbb, stateName);
+		return stateName;
+	}
+
+	@Override
+	public int compareTo(Country o) {
+		return stateName.compareTo(o.getStateName());
 	}
 	
 	
